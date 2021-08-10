@@ -1,5 +1,5 @@
-# laundry-native
-Aplikasi laundry berbasis web sederhana
+
+
 # Aplikasi Laundry Berbasis Web
 by : punyasaya
 
