@@ -12,6 +12,18 @@ by : punyasaya
 ```
 4. Dan Selesai:)
 
+## akun login
+- admin
+  - username : admin
+  - password : admin
+- kasir
+  - username : kasir
+  - password : kasir
+- owner
+  - username : owner
+  - password : owner
+
+
 ## kekurangan 
 - tampilannya yg kurang bagus
 - tidak ada security sistem
