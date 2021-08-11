@@ -15,7 +15,7 @@ if(isset($_POST["ubah"])){
   $id_outlet = $_POST["id_outlet"];
   $jenis_pelanggan = $_POST["jenis_pelanggan"];
   // query untk insert data ke database
-  $query = mysqli_query($koneksi, "UPDATE tb_pelanggan SET nama_pelanggan = '$nama_pelanggan', alamat = '$alamat', telp = '$telp', id_outlet = $id_outlet WHERE id_pelanggan = $id_pelanggan ") or die(mysqli_error($koneksi));
+  $query = mysqli_query($koneksi, "UPDATE tb_pelanggan SET nama_pelanggan = '$nama_pelanggan', alamat = '$alamat', telp = '$telp', id_outlet = $id_outlet, jenis_pelanggan = '$jenis_pelanggan' WHERE id_pelanggan = $id_pelanggan ") or die(mysqli_error($koneksi));
   
   // cek apakah berhasil atau tdk
   if(mysqli_affected_rows($koneksi) >= 0){

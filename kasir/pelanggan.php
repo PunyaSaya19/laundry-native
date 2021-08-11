@@ -6,7 +6,7 @@ if(!isset($_SESSION["level"]) || $_SESSION["level"] != "kasir"){
 }
 
 // ambil data pelanggan
-$query = mysqli_query($koneksi, "SELECT * FROM tb_pelanggan JOIN tb_outlet ON tb_pelanggan.id_outlet = tb_outlet.id_outlet");
+$query = mysqli_query($koneksi, "SELECT tb_pelanggan.* , tb_outlet.nama_outlet FROM tb_pelanggan JOIN tb_outlet ON tb_pelanggan.id_outlet = tb_outlet.id_outlet");
 $data = [];
 while($r = mysqli_fetch_assoc($query)){
   $data[] = $r;
@@ -15,7 +15,6 @@ while($r = mysqli_fetch_assoc($query)){
 // logic hapus data
 if(isset($_GET["id_hps"])){
   $id_hps = $_GET["id_hps"];
-  
   $query2 = mysqli_query($koneksi, "DELETE FROM tb_pelanggan WHERE id_pelanggan = $id_hps");
   if(mysqli_affected_rows($koneksi) > 0){
     echo "
@@ -93,7 +92,21 @@ if(isset($_GET["id_hps"])){
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>pelanggan</span></a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="outlet.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>outlet</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="paket.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>paket</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pengguna.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>pengguna</span></a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="transaksi.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>

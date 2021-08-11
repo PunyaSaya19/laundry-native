@@ -6,7 +6,7 @@ if(!isset($_SESSION["level"]) || $_SESSION["level"] != "admin"){
 }
 
 // ambil data pelanggan
-$query = mysqli_query($koneksi, "SELECT * FROM tb_pelanggan JOIN tb_outlet ON tb_pelanggan.id_outlet = tb_outlet.id_outlet");
+$query = mysqli_query($koneksi, "SELECT tb_pelanggan.* , tb_outlet.nama_outlet FROM tb_pelanggan JOIN tb_outlet ON tb_pelanggan.id_outlet = tb_outlet.id_outlet");
 $data = [];
 while($r = mysqli_fetch_assoc($query)){
   $data[] = $r;
